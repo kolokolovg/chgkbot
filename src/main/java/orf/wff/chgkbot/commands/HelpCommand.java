@@ -16,6 +16,9 @@ public class HelpCommand  extends MessageCommand {
     public void execute(TelegramBot bot, User user, Chat chat, String params) {
         StringBuilder messageBuilder = new StringBuilder();
         messageBuilder.append("Список доступных комманд: \t\n");
+        messageBuilder.append("/get - получить вопрос \t\n");
+        messageBuilder.append("/answer - получить ответ на текущий вопрос \t\n");
+        messageBuilder.append("/comment - получить комментарии к ответу \t\n");
         bot.execute(message(chat,messageBuilder.toString()));
     }
 }

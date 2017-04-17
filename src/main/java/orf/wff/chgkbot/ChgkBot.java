@@ -9,6 +9,7 @@ import com.pengrad.telegrambot.listeners.handlers.UpdateHandler;
 import com.pengrad.telegrambot.model.Update;
 import okhttp3.OkHttpClient;
 import orf.wff.chgkbot.commands.GetAnswerCommand;
+import orf.wff.chgkbot.commands.GetCommentCommand;
 import orf.wff.chgkbot.commands.GetQuestionCommand;
 import orf.wff.chgkbot.commands.HelpCommand;
 import orf.wff.chgkbot.services.QuestModule;
@@ -40,6 +41,7 @@ public class ChgkBot {
         bot.setUpdatesListener(new HandlersChainListener(bot, new UpdateHandler() {
             public boolean handle(TelegramBot bot, Update update) {
                 //bot.execute(message(update.message().chat(), Emoji.CONSTRUCTION_SIGN.toString()));
+                //todo добавить скан чата и проверку правильного ответа
                 return true;
             }
         }, handlers));
@@ -49,6 +51,7 @@ public class ChgkBot {
 
         return new UpdateHandler[]{new HelpCommand(),
                 new GetQuestionCommand(randomQuestionService),
-                new GetAnswerCommand(randomQuestionService)};
+                new GetAnswerCommand(randomQuestionService),
+                new GetCommentCommand(randomQuestionService)};
     }
 }
