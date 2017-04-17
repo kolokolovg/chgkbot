@@ -7,16 +7,12 @@ import com.pengrad.telegrambot.listeners.handlers.UpdateHandler;
 import com.pengrad.telegrambot.model.Update;
 import okhttp3.OkHttpClient;
 import orf.wff.chgkbot.commands.HelpCommand;
-import orf.wff.chgkbot.services.Emoji;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.util.Properties;
-
-import static com.pengrad.telegrambot.request.SendMessage.message;
-import static com.pengrad.telegrambot.request.SendSticker.sticker;
 
 public class ChgkBot {
     public static void main(String[] args) throws IOException {
