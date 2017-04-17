@@ -6,7 +6,9 @@ import com.pengrad.telegrambot.listeners.HandlersChainListener;
 import com.pengrad.telegrambot.listeners.handlers.UpdateHandler;
 import com.pengrad.telegrambot.model.Update;
 import okhttp3.OkHttpClient;
+import orf.wff.chgkbot.commands.GetQuestionCommand;
 import orf.wff.chgkbot.commands.HelpCommand;
+import orf.wff.chgkbot.services.RandomQuestionService;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,6 +40,6 @@ public class ChgkBot {
     }
 
     private static UpdateHandler[] updateHandlers() {
-        return new UpdateHandler[]{new HelpCommand()};
+        return new UpdateHandler[]{new HelpCommand(),new GetQuestionCommand()};
     }
 }

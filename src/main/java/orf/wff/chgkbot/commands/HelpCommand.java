@@ -9,7 +9,7 @@ import static com.pengrad.telegrambot.request.SendMessage.message;
 
 public class HelpCommand  extends MessageCommand {
     public HelpCommand() {
-        super("/help@chgk17bot", "Список доступных команд");
+        super("/help", "Список доступных команд");
     }
 
     @Override

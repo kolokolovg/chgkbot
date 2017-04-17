@@ -1,5 +1,9 @@
 package orf.wff.chgkbot.db;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Question {
     private String ParentId;
 
