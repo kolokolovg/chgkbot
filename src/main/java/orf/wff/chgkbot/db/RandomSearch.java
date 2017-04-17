@@ -54,7 +54,7 @@ public class RandomSearch {
             Unmarshaller unmarshaller = jc.createUnmarshaller();
             StringReader reader = new StringReader(ppp);
             this.question = (Search) unmarshaller.unmarshal(reader);
-            System.out.println("search size = "+this.question.getQuestion().size());
+            System.out.println(" rs constructor search size = "+this.question.getQuestion().size());
                     //
         }catch (Exception e) {
             System.out.println(e.getMessage());
