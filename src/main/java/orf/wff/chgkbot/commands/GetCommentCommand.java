@@ -22,9 +22,9 @@ public class GetCommentCommand extends MessageCommand {
     @Override
     public void execute(TelegramBot telegramBot, User user, Chat chat, String s) {
         StringBuilder messageBuilder = new StringBuilder();
-        messageBuilder.append("Комментарий к вопросу: "+ Emoji.AMBULANCE+": \t\n");
+        messageBuilder.append("Комментарий к вопросу: " + Emoji.AMBULANCE + ": \t\n");
         messageBuilder.append(rnd.getCurrent().getComments());
-        telegramBot.execute(message(chat,messageBuilder.toString()));
+        telegramBot.execute(message(chat, messageBuilder.toString()));
 
     }
 }

@@ -17,19 +17,18 @@ public class RandomQuestionService implements QuestService {
     @Inject
     public RandomQuestionService() {
         questions = new RandomSearch();
-        System.out.println("rqs constructor call");
     }
 
-    public Question getRandomQuestion(){
+    public Question getRandomQuestion() {
         this.current = questions.getNextRandomQuestion();
-        return  this.current;
+        return this.current;
     }
 
     public Question getCurrent() {
         return current;
     }
 
-    public void getNewSearch(){
+    public void getNewSearch() {
         questions = new RandomSearch();
     }
 

@@ -16,24 +16,28 @@ public class RandomSearch {
     private int total;
     private int current;
     public Search question;
-    public Question getNextRandomQuestion(){
-        if (current==total) {
+
+    public Question getNextRandomQuestion() {
+        if (current == total) {
             init();
             this.total = this.question.getQuestion().size();
             this.current = 0;
         }
         return question.getQuestion().get(current++);
-    };
+    }
+
+    ;
 
     public RandomSearch() {
-        if(init()){
+        if (init()) {
             this.total = this.question.getQuestion().size();
             this.current = 0;
-        };
+        }
+        ;
 
     }
 
-    private boolean init(){
+    private boolean init() {
         try {
             Properties properties = new Properties();
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
@@ -50,16 +54,14 @@ public class RandomSearch {
                     .build();
             Response response = client.newCall(request).execute();
             String ppp = response.body().string();
-            JAXBContext jc =JAXBContext.newInstance(Search.class);
+            JAXBContext jc = JAXBContext.newInstance(Search.class);
             Unmarshaller unmarshaller = jc.createUnmarshaller();
             StringReader reader = new StringReader(ppp);
             this.question = (Search) unmarshaller.unmarshal(reader);
-            System.out.println(" rs constructor search size = "+this.question.getQuestion().size());
-                    //
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-            return false;}
-            finally {
+            return false;
+        } finally {
             return true;
         }
     }

@@ -22,9 +22,9 @@ public class GetAnswerCommand extends MessageCommand {
     @Override
     public void execute(TelegramBot telegramBot, User user, Chat chat, String s) {
         StringBuilder messageBuilder = new StringBuilder();
-        messageBuilder.append("Внимание ответ "+ Emoji.GRINNING_FACE_WITH_SMILING_EYES+": \t\n");
+        messageBuilder.append("Внимание ответ " + Emoji.GRINNING_FACE_WITH_SMILING_EYES + ": \t\n");
         messageBuilder.append(rnd.getCurrent().getAnswer());
-        telegramBot.execute(message(chat,messageBuilder.toString()));
+        telegramBot.execute(message(chat, messageBuilder.toString()));
 
     }
 }
